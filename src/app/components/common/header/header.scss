@@ -1,0 +1,25 @@
+/*----------------------------------------------------------------*/
+/*  User Button
+/*----------------------------------------------------------------*/
+.user-button {
+    margin: 0;
+    padding: 0 16px;
+    border-width: 0px;
+    // height: $toolbarHeight;
+    height: 64px;
+    text-transform: none;
+
+    .avatar-wrapper {
+        position: relative;
+
+        .status {
+            position: absolute;
+            bottom: -3px;
+            right: 5px;
+        }
+    }
+
+    .username {
+        margin: 0 12px 0 8px;
+    }
+}

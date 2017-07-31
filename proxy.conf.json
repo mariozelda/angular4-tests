@@ -1,0 +1,14 @@
+{
+  "/etility/*": {
+    "target": "http://159.232.68.173:50000",
+    "logLevel": "debug",
+    "auth": "90136480:test.bkw",
+    "secure": false,
+    "protocolRewrite": "null",
+    "changeOrigin": true,
+    "headers": {
+      "accept": "application/json",
+      "content-type": "application/json"
+    }
+  }
+}
