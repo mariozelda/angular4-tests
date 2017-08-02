@@ -9,17 +9,85 @@
     height: 64px;
     text-transform: none;
 
-    .avatar-wrapper {
-        position: relative;
-
-        .status {
-            position: absolute;
-            bottom: -3px;
-            right: 5px;
-        }
-    }
-
     .username {
         margin: 0 12px 0 8px;
+        font-size: 16px;
+    }
+
+    .user-chevron {
+        vertical-align: bottom;
     }
 }
+
+/* Styles go here */
+body {
+  background: #f1f1f1;
+  margin: 0;
+}
+
+.title {
+  color: #fff;
+  margin-right: 15px;
+}
+.toolbar.mat-toolbar.mat-primary {
+  background: #334658;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.24);
+}
+
+.toolbar .mat-button-focus-overlay {
+  background: rgba(255,255,255,.12);
+}
+.example-card {
+  margin: 20px 20%;
+}
+
+.example-card .mat-card-content {
+  font-size: 16px;
+}
+/* Menu styles */
+
+.sub-menu {
+  margin-top: -48px;
+}
+
+.sub-menu.mat-menu-panel.mat-menu-before.mat-menu-below {
+  transform-origin: left top !important;
+}
+
+.custom-menu.mat-menu-panel {
+  min-width: 180px;
+}
+app-header [md-button] {
+  z-index: 1001;
+  line-height: 64px;
+  color: #fff;
+}
+
+
+[md-menu-item].mat-menu-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+[md-menu-item].mat-menu-item span:first-child {
+  margin-right: 15px;
+}
+[md-menu-item].mat-menu-item .mat-icon {
+  margin-right: 0;
+}
+
+.mat-divider {
+  border-top: 1px solid rgba(0,0,0,.12);
+  margin: 0;
+}
+
+
+.cdk-overlay-backdrop {
+  display: block;
+}
+
+.cdk-overlay-backdrop ~ .cdk-overlay-backdrop {
+  display: none;
+}
+
+/* End Menu styles */
