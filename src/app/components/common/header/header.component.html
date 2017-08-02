@@ -4,8 +4,9 @@
   <a class="navbar-brand" href="#">
     <img src="/assets/img/inpeek-logo.png" width="120" height="40" alt="">
   </a>
-  <button md-icon-button (click)="toggleSidenav()">
-    <div *ngIf="!isOpened;else other_content">
+
+  <button md-icon-button (click)="toggleSidenav()" *ngIf="!navbarService.isSidenavDisabled()">
+    <div *ngIf="!isSidenavOpened;else other_content">
       <md-icon>chevron_right</md-icon>
     </div>
     <ng-template #other_content>

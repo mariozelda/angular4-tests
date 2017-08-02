@@ -1,6 +1,7 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { NavbarComponent } from '../navbar/navbar.component';
+import { MdSidenavToggleResult } from '@angular/material';
+import { NavbarService } from '../navbar/navbar.service';
 
 @Component({
   selector: 'app-header',
@@ -11,23 +12,30 @@ import { NavbarComponent } from '../navbar/navbar.component';
 })
 export class HeaderComponent implements OnInit {
 
-  @Output() navToggle = new EventEmitter<boolean>();
-  isOpened = false;
+  //default state for sidenav
+  public isSidenavOpened: boolean = true;
 
-  constructor( private router:Router) {
-
+  constructor( private router:Router,
+    public navbarService: NavbarService) {
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
   /**
    * Method to toggle application sidenav.
    */
   toggleSidenav() {
-    this.isOpened = !this.isOpened;
-    this.navToggle.emit(true);
+    this.navbarService.toggle().then(
+      (data) => {
+        if(data.animationFinished){
+          if(data.type == 'close'){
+            this.isSidenavOpened = false;
+          } else {
+            this.isSidenavOpened = true;
+          }
+        }
+      }
+    );
   }
-
 
 }
