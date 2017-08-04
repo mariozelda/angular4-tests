@@ -8,24 +8,27 @@ import { MenuService } from './components/common/menu/menu.service';
 
 import { FFDAOMeterReadingService } from './flex-frame/core/infrastructure/services/ff-dao-meter-reading.service';
 
-// import { MenuNavService } from './Components/common/menu/menu.nav.service';
-import { MenuItem } from './Components/common/menu/menu.item';
+import { MenuItemModel } from './Components/common/menu/menu.item.model';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
 
-   @ViewChild('mainNav') set content(content: MdSidenav) {
-      if(content == undefined){
-        this.navbarService.setSidenavDisabled();
-      } else {
-        this.navbarService.setSidenav(content);
-      }
-   }
+  @ViewChild('mainNav') set content(content: MdSidenav) {
+    console.log('content ->' + content);
+    if(content == undefined){
+      this.navbarService.setSidenavDisabled();
+    } else {
+      this.navbarService.setSidenav(content);
+    }
+  }
 
+  title = 'app';
+  //TODO: set value from config file | true: navigation horizontal
+  horizontalNav: boolean = true;
 
   constructor(private meterReadingService: FFDAOMeterReadingService,
     private navbarService: NavbarService,
@@ -38,39 +41,49 @@ export class AppComponent implements OnInit {
     // );
     this.loadMenu();
   }
-  title = 'app';
-
-  private loadMenu(){
-    //TODO get Menu info from somewhere...
-    let menuItems: MenuItem[] = [];
-
-    let menutItem1: MenuItem = new MenuItem('Menu 1');
-    menuItems.push(menutItem1);
-
-    let menuChilds: MenuItem[] = [];
-
-    let menutItem2_1: MenuItem = new MenuItem('Menu 2 1');
-    menuChilds.push(menutItem2_1);
-
-    let menutItem2_2: MenuItem = new MenuItem('Menu 2 2');
-    menuChilds.push(menutItem2_1);
-
-    let menutItem2_3: MenuItem = new MenuItem('Menu 2 3');
-    menuChilds.push(menutItem2_1);
-
-    let menutItem2: MenuItem = new MenuItem('Menu 2', menuChilds);
-    menuItems.push(menutItem2);
-
-    let menutItem3: MenuItem = new MenuItem('Menu 3');
-    menuItems.push(menutItem3);
-
-    this.menuService.initMenu(menuItems);
-  }
-
-  //TODO: set value from config file | true: navigation horizontal
-  horizontalNav: boolean = false;
 
   public ngOnInit(): void {
     // Store sidenav to service
+  }
+
+  private loadMenu(){
+    //TODO get Menu info from somewhere...
+    let menuItems: MenuItemModel[] = [];
+
+    let menutItem1: MenuItemModel = new MenuItemModel('Menu 1');
+    menuItems.push(menutItem1);
+
+    let menuChilds: MenuItemModel[] = [];
+
+    let menutItem2_1: MenuItemModel = new MenuItemModel('Menu 2 1');
+    menuChilds.push(menutItem2_1);
+
+    let menutItem2_2: MenuItemModel = new MenuItemModel('Menu 2 2');
+    menuChilds.push(menutItem2_1);
+
+    let menutItem2_3: MenuItemModel = new MenuItemModel('Menu 2 3');
+    menuChilds.push(menutItem2_1);
+
+    let menutItem2: MenuItemModel = new MenuItemModel('Menu 2', menuChilds);
+    menuItems.push(menutItem2);
+
+    let menutItem3: MenuItemModel = new MenuItemModel('Menu 3');
+    menuItems.push(menutItem3);
+
+    let menuChilds_4: MenuItemModel[] = [];
+
+    let menutItem4_1: MenuItemModel = new MenuItemModel('Menu 4 1');
+    menuChilds_4.push(menutItem4_1);
+
+    let menutItem4_2: MenuItemModel = new MenuItemModel('Menu 4 2');
+    menuChilds_4.push(menutItem4_1);
+
+    let menutItem4_3: MenuItemModel = new MenuItemModel('Menu 4 3');
+    menuChilds_4.push(menutItem4_1);
+
+    let menutItem4: MenuItemModel = new MenuItemModel('Menu 4', menuChilds_4);
+    menuItems.push(menutItem4);
+
+    this.menuService.initMenu(menuItems);
   }
 }

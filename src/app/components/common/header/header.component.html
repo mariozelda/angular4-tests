@@ -1,10 +1,9 @@
 <md-toolbar>
-
-  <a class="navbar-brand" href="#">
+  <a class="navbar-brand" href="#" fxFlex="none">
     <img src="/assets/img/inpeek-logo.png" width="120" height="40" alt="">
   </a>
 
-  <button md-icon-button (click)="toggleSidenav()" *ngIf="!navbarService.isSidenavDisabled()">
+  <button md-icon-button (click)="toggleSidenav()" *ngIf="!navbarService.isSidenavDisabled()" fxFlex="none">
     <div *ngIf="!isSidenavOpened;else other_content">
       <md-icon>chevron_right</md-icon>
     </div>
@@ -15,7 +14,7 @@
     </ng-template>
   </button>
 
-  <div fxLayout="row" fxLayoutAlign="end none">
+  <div fxFlex="auto" fxLayout="row" fxLayoutAlign="end none">
 
     <button class="user-button" [md-menu-trigger-for]="menu">
       <img md-menu-align-target class="avatar" src="assets/img/avatars/profile.jpg">

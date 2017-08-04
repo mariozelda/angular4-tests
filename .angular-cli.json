@@ -21,8 +21,8 @@
       "styles": [
         "../node_modules/bootstrap/dist/css/bootstrap.min.css",
         "styles.css",
-        "app/core/scss/material.scss",
-        "app/core/scss/variables.scss",
+        "config.scss",
+        "theme.scss",
         "app/components/common/header/header.scss",
         "app/components/common/navbar/navbar.scss",
         "app/components/common/horizontal-navbar/horizontal-navbar.scss"
