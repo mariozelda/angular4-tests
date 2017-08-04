@@ -1,10 +1,9 @@
-import {Component, NgModule, VERSION} from '@angular/core'
+import {Component, Inject} from '@angular/core'
 import {BrowserModule} from '@angular/platform-browser'
 import { FFDAOMeterReadingService } from './flex-frame/core/infrastructure/services/ff-dao-meter-reading.service';
 
-import { MdButtonModule, MdCardModule, MdIconModule, MdMenuModule, MdToolbarModule } from '@angular/material';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HeaderComponent } from './components/common/header/header.component';
+import {TranslateService} from 'ng2-translate';
+//import {BROWSER_LANGUAGE} from '../../constants/all'; --> Browser_Language
 
 @Component({
   selector: 'app-root',
@@ -13,47 +12,21 @@ import { HeaderComponent } from './components/common/header/header.component';
 })
 export class AppComponent {
 
-  menuItems = [
-    {
-      text: 'John Doe',
-      items: [
-        {
-          text: 'Profile'
-        },
-        {
-          text: 'Settings'
-        },
-        {
-          text: 'Account'
-        },
-        {
-          text: 'Sign Out'
-        }
-      ]
-    }
-  ];
+  constructor(private _translateService: TranslateService, private meterReadingService: FFDAOMeterReadingService, @Inject("Browser_Language") private _browserLocale: string) {
 
-  constructor(private meterReadingService: FFDAOMeterReadingService) {
     this.meterReadingService.getMeterReadingResultSet('169013').subscribe(
       (data) => {
         console.log(data);
       }
     );
   }
-  title = 'app';
-}
 
-@NgModule({
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    MdToolbarModule,
-    MdMenuModule,
-    MdButtonModule,
-    MdIconModule,
-    MdCardModule
-  ],
-  declarations: [ AppComponent, HeaderComponent],
-  bootstrap:    [ AppComponent ]
-})
-export class AppModule { }
+  title = 'app';
+
+  public ngOnInit(): void {
+    this._translateService.addLangs(['en-US', 'de-DE', 'fr-FR']);
+    this._translateService.setDefaultLang('en-US');
+    // this._translateService.use(this._browserLocale);
+    this._translateService.use("de-DE");
+  }
+}
