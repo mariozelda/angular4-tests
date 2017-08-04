@@ -1,11 +1,12 @@
 import { Component, OnInit, ViewChild, Inject } from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser'
 import { MdSidenav } from '@angular/material';
-import { MenuItemModel } from './Components/common/menu/menu.item.model';
+
+import { MenuItemModel } from './flex-frame/components/common/menu/menu.item.model';
 
 import {TranslateService} from 'ng2-translate';
-import { NavbarService } from './components/common/navbar/navbar.service';
-import { MenuService } from './components/common/menu/menu.service';
+import { NavbarService } from './flex-frame/components/common/navbar/navbar.service';
+import { MenuService } from './flex-frame/components/common/menu/menu.service';
 import { FFDAOMeterReadingService } from './flex-frame/core/infrastructure/services/ff-dao-meter-reading.service';
 
 @Component({
@@ -25,8 +26,9 @@ export class AppComponent implements OnInit {
   }
 
   title = 'app';
+
   //TODO: set value from config file | true: navigation horizontal
-  horizontalNav: boolean = true;
+  horizontalNav: boolean = false;
 
   constructor(private meterReadingService: FFDAOMeterReadingService,
     private _translateService: TranslateService,

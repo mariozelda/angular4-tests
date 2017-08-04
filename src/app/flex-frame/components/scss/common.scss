@@ -1,12 +1,15 @@
+
+/******************************
+* Variables for configuration *
+******************************/
 @import './variables.scss';
 
-/******************************************
-* Impports for style of common components *
-*******************************************/
-@import '../../components/common/header/header.scss';
-@import '../../components/common/navbar/navbar.scss';
-@import '../../components/common/horizontal-navbar/horizontal-navbar.scss';
-
+/*****************************************
+* Imports for style of common components *
+******************************************/
+@import '../common/header/header.scss';
+@import '../common/navbar/navbar.scss';
+@import '../common/horizontal-navbar/horizontal-navbar.scss';
 
 /**********************************
 * Comon Styles                    *
