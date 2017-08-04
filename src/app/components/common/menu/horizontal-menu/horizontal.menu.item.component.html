@@ -1,0 +1,8 @@
+<button md-button [mdMenuTriggerFor]="dropdownMenu" (click)="menuAction()">
+  <span>{{menuItem.label | translate}}</span>
+  <md-icon *ngIf="menuItem.isParent()">keyboard_arrow_down</md-icon>
+</button>
+
+<md-menu #dropdownMenu="mdMenu" yPosition="below" overlapTrigger="false">
+  <menu-item [menuItem] = "menuChild" *ngFor="let menuChild of menuItem.getChilds()"></menu-item>
+</md-menu>

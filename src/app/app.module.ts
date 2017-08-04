@@ -25,6 +25,7 @@ import { NavbarComponent } from './components/common/navbar/navbar.component';
 import { HorizontalNavbarComponent } from './components/common/horizontal-navbar/horizontal-navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { MenuItemComponent } from './components/common/menu/menu.item.component';
+import { HorizontalMenuItemComponent } from './components/common/menu/horizontal-menu/horizontal.menu.item.component';
 import { FooterComponent } from './components/common/footer/footer.component';
 
 
@@ -36,6 +37,7 @@ import { FooterComponent } from './components/common/footer/footer.component';
     HorizontalNavbarComponent,
     HomeComponent,
     MenuItemComponent,
+    HorizontalMenuItemComponent,
     FooterComponent
   ],
   imports: [
