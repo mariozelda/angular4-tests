@@ -4,6 +4,9 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { MaterialModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {TranslateModule} from 'ng2-translate';
+
+let language = navigator.language || navigator['userLanguage'];
 
 //Routes
 import { APP_ROUTING } from './app.routes';
@@ -34,10 +37,12 @@ import { HomeComponent } from './components/home/home.component';
     FFInfrastructureModule,
     MaterialModule,
     BrowserAnimationsModule,
-    APP_ROUTING
+    APP_ROUTING,
+    TranslateModule.forRoot()
   ],
   providers: [
-    SidenavService
+    SidenavService,
+    { provide: "Browser_Language", useValue: language }
   ],
   bootstrap: [AppComponent],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
