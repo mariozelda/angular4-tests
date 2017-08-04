@@ -1,48 +1,45 @@
 {
-  "menu":{
-    "customers": "Kunden"
+  "menuItem1":{
+    "label": "Menüelement 1"
   },
-  "customerList": {
-    "header": "Kundenliste",
-    "tableHeaders": {
-      "name": "Name",
-      "city": "Stadt",
-      "country": "Land",
-      "customerSince": "Kunde seit",
-      "satisfaction": "Zufriedenheit"
-    }
+  "menuItem2": {
+    "label": "Menüelement 2"
   },
+  "menuItem2_1": {
+    "label": "Unteroption 1"
+  },
+  "menuItem2_2": {
+    "label": "Unteroption 2"
+  },
+  "menuItem2_3": {
+    "label": "Unteroption 3"
+  },
+  "menuItem3": {
+    "label": "Menüelement 3"
+  },
+  "menuItem4": {
+    "label": "Menüelement 4"
+  },
+  "menuItem4_1": {
+    "label": "Unteroption 1"
+  },
+  "menuItem4_2": {
+    "label": "Unteroption 2"
+  },
+  "menuItem4_3": {
+    "label": "Unteroption 3"
+  },
+  "welcome": "Willkommen zu {{title}}!",
+  "homepage":{
+    "text": "Hier sind einige Links, die Ihnen helfen, zu beginnen:"
+  },
+  "tour": "Besichtigung der Helden",
+  "documentation": "CLI-Dokumentation",
+  "blog": "Angular blog",
   "languages": {
     "de-DE": "Deutsch",
-    "en-US": "Englisch"
-  },
-  "customerDetails": {
-    "headers": {
-      "new": "Neuer Kunde",
-      "update": "Details für {{name}}"
-    },
-    "fields": {
-      "name": {
-        "caption": "Name",
-        "placeholder": "Max Mustermann"
-      },
-      "country": {
-        "caption": "Land",
-        "placeholder": "Deutschland"
-      },
-      "countryCode": {
-        "caption": "Landeskürzel",
-        "placeholder": "DE"
-      },
-      "city": {
-        "caption": "Stadt",
-        "placeholder": "Berlin"
-      },
-      "phone": {
-        "caption": "Telefon",
-        "placeholder": "+49 (123) 123 456"
-      }
-    }
+    "en-US": "Englisch",
+    "fr-FR": "Französisch"
   },
   "buttons": {
     "save": "Speichern",

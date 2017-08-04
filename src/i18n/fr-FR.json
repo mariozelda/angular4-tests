@@ -1,49 +1,45 @@
 {
-  "menu":{
-    "customers": "Les clients"
+  "menuItem1":{
+    "label": "Elément 1"
   },
-  "customerList": {
-    "header": "Customer List",
-    "tableHeaders": {
-      "name": "Prénom",
-      "city": "Ville",
-      "country": "Pays",
-      "customerSince": "Client depuis",
-      "satisfaction": "la satisfaction"
-    }
+  "menuItem2": {
+    "label": "Elément 2"
   },
+  "menuItem2_1": {
+    "label": "Option secondaire 1"
+  },
+  "menuItem2_2": {
+    "label": "Option secondaire 2"
+  },
+  "menuItem2_3": {
+    "label": "Option secondaire 3"
+  },
+  "menuItem3": {
+    "label": "Elément 3"
+  },
+  "menuItem4": {
+    "label": "Elément 4"
+  },
+  "menuItem4_1": {
+    "label": "Option secondaire 1"
+  },
+  "menuItem4_2": {
+    "label": "Option secondaire 2"
+  },
+  "menuItem4_3": {
+    "label": "Option secondaire 3"
+  },
+  "welcome": "Bienvenue à {{title}}!",
+  "homepage":{
+    "text": "Voici quelques liens pour vous aider à démarrer:"
+  },
+  "tour": "Tour of Heroes",
+  "documentation": "Documentation CLI",
+  "blog": "Blog angulaire",
   "languages": {
     "de-DE": "German",
     "en-US": "English",
     "fr-FR": "Français"
-  },
-  "customerDetails": {
-    "headers": {
-      "new": "Nouveau client",
-      "update": "Détails pour {{name}}"
-    },
-    "fields": {
-      "name": {
-        "caption": "Prénom",
-        "placeholder": "John Smith"
-      },
-      "country": {
-        "caption": "Pays",
-        "placeholder": "Les États-Unis d'Amérique"
-      },
-      "countryCode": {
-        "caption": "Code postal",
-        "placeholder": "US"
-      },
-      "city": {
-        "caption": "Ville",
-        "placeholder": "New York"
-      },
-      "phone": {
-        "caption": "Téléphone",
-        "placeholder": "+1 (555) 123 456"
-      }
-    }
   },
   "buttons": {
     "save": "enregistrer",

@@ -1,18 +1,12 @@
 import { Component, OnInit, ViewChild, Inject } from '@angular/core';
-
 import {BrowserModule} from '@angular/platform-browser'
-
 import { MdSidenav } from '@angular/material';
+import { MenuItemModel } from './Components/common/menu/menu.item.model';
 
 import {TranslateService} from 'ng2-translate';
-
 import { NavbarService } from './components/common/navbar/navbar.service';
-
 import { MenuService } from './components/common/menu/menu.service';
-
 import { FFDAOMeterReadingService } from './flex-frame/core/infrastructure/services/ff-dao-meter-reading.service';
-
-import { MenuItemModel } from './Components/common/menu/menu.item.model';
 
 @Component({
   selector: 'app-root',
@@ -59,39 +53,49 @@ export class AppComponent implements OnInit {
     //TODO get Menu info from somewhere...
     let menuItems: MenuItemModel[] = [];
 
-    let menutItem1: MenuItemModel = new MenuItemModel('Menu 1');
-    menuItems.push(menutItem1);
+    let menuItem1: MenuItemModel = new MenuItemModel('Menu 1');
+    menuItem1.label = 'menuItem1.label';
+    menuItems.push(menuItem1);
 
     let menuChilds: MenuItemModel[] = [];
 
-    let menutItem2_1: MenuItemModel = new MenuItemModel('Menu 2 1');
-    menuChilds.push(menutItem2_1);
+    let menuItem2_1: MenuItemModel = new MenuItemModel('Menu 2 1');
+    menuItem2_1.label = 'menuItem2_1.label';
+    menuChilds.push(menuItem2_1);
 
-    let menutItem2_2: MenuItemModel = new MenuItemModel('Menu 2 2');
-    menuChilds.push(menutItem2_1);
+    let menuItem2_2: MenuItemModel = new MenuItemModel('Menu 2 2');
+    menuItem2_2.label = 'menuItem2_2.label';
+    menuChilds.push(menuItem2_2);
 
-    let menutItem2_3: MenuItemModel = new MenuItemModel('Menu 2 3');
-    menuChilds.push(menutItem2_1);
+    let menuItem2_3: MenuItemModel = new MenuItemModel('Menu 2 3');
+    menuItem2_3.label = 'menuItem2_3.label';
+    menuChilds.push(menuItem2_3);
 
-    let menutItem2: MenuItemModel = new MenuItemModel('Menu 2', menuChilds);
-    menuItems.push(menutItem2);
+    let menuItem2: MenuItemModel = new MenuItemModel('Menu 2', menuChilds);
+    menuItem2.label = 'menuItem2.label';
+    menuItems.push(menuItem2);
 
-    let menutItem3: MenuItemModel = new MenuItemModel('Menu 3');
-    menuItems.push(menutItem3);
+    let menuItem3: MenuItemModel = new MenuItemModel('Menu 3');
+    menuItem3.label = 'menuItem3.label';
+    menuItems.push(menuItem3);
 
     let menuChilds_4: MenuItemModel[] = [];
 
-    let menutItem4_1: MenuItemModel = new MenuItemModel('Menu 4 1');
-    menuChilds_4.push(menutItem4_1);
+    let menuItem4_1: MenuItemModel = new MenuItemModel('Menu 4 1');
+    menuItem4_1.label = 'menuItem4_1.label';
+    menuChilds_4.push(menuItem4_1);
 
-    let menutItem4_2: MenuItemModel = new MenuItemModel('Menu 4 2');
-    menuChilds_4.push(menutItem4_1);
+    let menuItem4_2: MenuItemModel = new MenuItemModel('Menu 4 2');
+    menuItem4_2.label = 'menuItem4_2.label';
+    menuChilds_4.push(menuItem4_2);
 
-    let menutItem4_3: MenuItemModel = new MenuItemModel('Menu 4 3');
-    menuChilds_4.push(menutItem4_1);
+    let menuItem4_3: MenuItemModel = new MenuItemModel('Menu 4 3');
+    menuItem4_3.label = 'menuItem4_3.label';
+    menuChilds_4.push(menuItem4_3);
 
-    let menutItem4: MenuItemModel = new MenuItemModel('Menu 4', menuChilds_4);
-    menuItems.push(menutItem4);
+    let menuItem4: MenuItemModel = new MenuItemModel('Menu 4', menuChilds_4);
+    menuItem4.label = 'menuItem4.label';
+    menuItems.push(menuItem4);
 
     this.menuService.initMenu(menuItems);
   }
