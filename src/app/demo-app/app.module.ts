@@ -3,12 +3,12 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import { AppComponent } from './app.component';
+import { DemoAppComponent } from './app.component';
 import { FFInfrastructureModule } from '../flex-frame/core/infrastructure/ff-infrastructure.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    DemoAppComponent
   ],
   imports: [
     BrowserModule,
@@ -17,6 +17,6 @@ import { FFInfrastructureModule } from '../flex-frame/core/infrastructure/ff-inf
     FFInfrastructureModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [DemoAppComponent]
 })
-export class AppModule {}
+export class DemoAppModule {}

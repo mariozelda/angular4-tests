@@ -1,6 +1,19 @@
-/*----------------------------------------------------------------*/
-/*  Avatars
-/*----------------------------------------------------------------*/
+@import './variables.scss';
+
+/******************************************
+* Impports for style of common components *
+*******************************************/
+@import '../../components/common/header/header.scss';
+@import '../../components/common/navbar/navbar.scss';
+@import '../../components/common/horizontal-navbar/horizontal-navbar.scss';
+
+
+/**********************************
+* Comon Styles                    *
+***********************************/
+/*---------------*/
+/*  Avatars styles
+/*---------------*/
 .avatar {
     width: 33px;
     min-width: 33px;

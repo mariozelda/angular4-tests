@@ -6,7 +6,7 @@ import { FFDAOMeterReadingService } from '../flex-frame/core/infrastructure/serv
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class DemoAppComponent {
   constructor(private meterReadingService: FFDAOMeterReadingService) {
     this.meterReadingService.getMeterReadingResultSet('169013').subscribe(
       (data) => {
