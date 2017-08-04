@@ -12,7 +12,7 @@ import { MenuService } from './components/common/menu/menu.service';
 
 import { FFDAOMeterReadingService } from './flex-frame/core/infrastructure/services/ff-dao-meter-reading.service';
 
-import { MenuItemModel } from './Components/common/menu/menu.item.model';
+import { MenuItemModel } from './components/common/menu/menu.item.model';
 
 @Component({
   selector: 'app-root',
