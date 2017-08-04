@@ -1,10 +1,9 @@
-import { Component, OnInit, Output, EventEmitter, Input, QueryList, ViewChildren} from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, QueryList, ViewChildren} from '@angular/core';
 import { Router } from '@angular/router';
-import { MdSidenavToggleResult } from '@angular/material';
-import { NavbarService } from '../navbar/navbar.service';
-import { ConnectedPositionStrategy, MdMenuTrigger } from '@angular/material';
+import { MdSidenavToggleResult, ConnectedPositionStrategy, MdMenuTrigger } from '@angular/material';
 
-import {TranslateService} from 'ng2-translate';
+import { NavbarService } from '../navbar/navbar.service';
+import { TranslateService } from 'ng2-translate';
 
 let originWithFallbackPosition = ConnectedPositionStrategy.prototype.withFallbackPosition;
 ConnectedPositionStrategy.prototype.withFallbackPosition = function (originPos, overlayPos) {
@@ -20,8 +19,6 @@ ConnectedPositionStrategy.prototype.withFallbackPosition = function (originPos, 
   templateUrl: './header.component.html'
 })
 export class HeaderComponent implements OnInit {
-
-  // @Input() items: any[];
 
   @ViewChildren(MdMenuTrigger) triggers: QueryList<MdMenuTrigger>;
 
@@ -93,14 +90,15 @@ export class HeaderComponent implements OnInit {
     this.triggers.forEach(x => x.closeMenu());
   }
 
-  changeLanguage() {
-      // console.log("Change language!");
-      this.triggers.forEach(x => x.closeMenu());
-  }
-
   onChange(localeId: string): void {
-    debugger;
     this._translateService.use(localeId);
+
+    for (let entry of this.languages) {
+        if(localeId === entry.value){
+          this.defaultLanguage = entry;
+        }
+    }
+
   }
 
 }
