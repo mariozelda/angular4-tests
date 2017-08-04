@@ -1,9 +1,9 @@
-<button md-menu-item *ngIf="menuItem.isParent()" [mdMenuTriggerFor]="dropdownMenu">
+<button md-button *ngIf="menuItem.isParent()" [mdMenuTriggerFor]="dropdownMenu">
   <span>{{menuItem.label | translate}}</span>
   <md-icon *ngIf="menuItem.isParent()">keyboard_arrow_down</md-icon>
 </button>
 
-<button md-menu-item *ngIf="!menuItem.isParent()" (click)="menuAction()">
+<button md-button *ngIf="!menuItem.isParent()" (click)="menuAction()">
   <span>{{menuItem.label | translate}}</span>
 </button>
 
