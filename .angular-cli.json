@@ -24,6 +24,7 @@
         "styles.css",
         "config.scss",
         "theme.scss",
+        "app/core/scss/material.scss",
         "app/components/common/header/header.scss",
         "app/components/common/navbar/navbar.scss",
         "app/components/common/horizontal-navbar/horizontal-navbar.scss"

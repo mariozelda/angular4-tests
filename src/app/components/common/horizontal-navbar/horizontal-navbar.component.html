@@ -1,24 +1,7 @@
 <md-toolbar color="primary">
 
   <div layout="row" layout-align="start center">
-    <button md-button>Subitem 1</button>
-    <button class="custom-raised-button">Subitem 2</button>
-    <button md-raised-button color="primary">Subitem 3</button>
-    <button md-raised-button color="accent">Subitem 4</button>
-
-    <md-menu #dropdownMenu="mdMenu" yPosition="below">
-      <button md-menu-item> Option 1 </button>
-      <button md-menu-item> Option 2 </button>
-    </md-menu>
-
-    <button md-button [mdMenuTriggerFor]="dropdownMenu">
-       <!-- <md-icon>more_vert</md-icon> -->
-       <span>Subitem 5</span>
-       <md-icon>keyboard_arrow_down</md-icon>
-    </button>
-
-    <button md-raised-button disabled>Subitem 6</button>
-
+    <menu-item [menuItem] = "menuItem" horizontal="true" *ngFor="let menuItem of menuItems"></menu-item>
   </div>
-
+  
 </md-toolbar>

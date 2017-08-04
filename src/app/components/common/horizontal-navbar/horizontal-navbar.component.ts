@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { MenuService } from '../menu/menu.service'
+import { MenuItemModel } from '../menu/menu.item.model'
 
 @Component({
   selector: 'app-horizontal-navbar',
@@ -7,7 +8,11 @@ import { Router } from '@angular/router';
 })
 export class HorizontalNavbarComponent implements OnInit {
 
-  constructor( private router:Router) { }
+  public menuItems: MenuItemModel[] = [];
+
+  constructor(private menuService: MenuService) {
+    this.menuItems = this.menuService.getMenu();
+  }
 
   ngOnInit() {
   }

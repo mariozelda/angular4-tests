@@ -1,6 +1,7 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { MdSidenav } from '@angular/material';
-import { Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { MenuService } from '../menu/menu.service'
+import { MenuItemModel } from '../menu/menu.item.model'
+
 
 @Component({
   selector: 'app-navbar',
@@ -8,18 +9,13 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
 
-  @ViewChild('mainNav') mainNav:MdSidenav;
+  public menuItems: MenuItemModel[] = [];
 
-  constructor( private router:Router) { }
-
-  ngOnInit(){
+  constructor(private menuService: MenuService) {
+    this.menuItems = this.menuService.getMenu();
   }
 
-  /**
-   * Method to toggle application sidenav.
-   */
-  toggleSidenav() {
-    this.mainNav.toggle()
+  public ngOnInit(): void {
   }
 
 }

@@ -1,6 +1,15 @@
 /*----------------------------------------------------------------*/
 /*  User Button
 /*----------------------------------------------------------------*/
+//$header-height: 100px;
+@import '../../../../config.scss';
+
+app-header{
+  md-toolbar{
+    height: $header-height;
+  }
+}
+
 .user-button {
     margin: 0;
     padding: 0 16px;
@@ -19,11 +28,6 @@
     }
 }
 
-/* Styles go here */
-body {
-  background: #f1f1f1;
-  margin: 0;
-}
 
 .title {
   color: #fff;
@@ -57,6 +61,7 @@ body {
 .custom-menu.mat-menu-panel {
   min-width: 180px;
 }
+
 app-header [md-button] {
   z-index: 1001;
   line-height: 64px;

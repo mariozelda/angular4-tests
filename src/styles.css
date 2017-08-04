@@ -1,48 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~https://fonts.googleapis.com/icon?family=Material+Icons';
-@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+/*@import '~@angular/material/prebuilt-themes/indigo-pink.css';*/
 
-body {
-  margin: 0;
-  font-family: Roboto, sans-serif;
+html{
+  min-height:100%;/* make sure it is at least as tall as the viewport */
+  min-width:100%;/* make sure it is at least as anchor as the viewport */
+  position: absolute;
 }
-
-md-card {
-  max-width: 80%;
-  margin: 2em auto;
-  text-align: center;
+body{
+  position: absolute;
+  min-height:100%; /* force the BODY element to match the height of the HTML element */
+  min-width:100%; /* force the BODY element to match the width of the HTML element */
 }
-
-md-toolbar-row {
-  justify-content: space-between;
-}
-
-.done {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  color: white;
-}
-
-.png-icon{
-    margin: 5px auto auto;
-    padding: 0;
-    display: inline-block;
-    background-repeat: no-repeat no-repeat;
-    pointer-events: none;
-}
-
-
-
-/* Bootstrap example */
-/*body{
-  padding-bottom: 50px;
-}
-
-.main-container{
-  margin-top: 20px;
-}
-
-.img-logo{
-  width: 120px;
-}*/

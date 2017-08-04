@@ -1,0 +1,21 @@
+<button md-menu-item *ngIf="!menuItem.isParent() && !horizontal" (click)="menuAction()">
+  <span translate="menuItem.label">{{menuItem.title}}</span>
+</button>
+
+<button md-button *ngIf="!menuItem.isParent() && horizontal" (click)="menuAction()">
+  <span translate="menuItem.label">{{menuItem.title}}</span>
+</button>
+
+<md-menu #dropdownMenu="mdMenu" yPosition="below" overlapTrigger="false">
+  <menu-item [menuItem] = "menuChild" *ngFor="let menuChild of menuItem.getChilds()"></menu-item>
+</md-menu>
+
+<button md-menu-item="!vertical" [mdMenuTriggerFor]="dropdownMenu" *ngIf="menuItem.isParent() && !horizontal">
+  <span translate="menuItem.label">{{menuItem.title}}</span>
+  <md-icon>keyboard_arrow_down</md-icon>
+</button>
+
+<button md-button [mdMenuTriggerFor]="dropdownMenu" *ngIf="menuItem.isParent() && horizontal">
+  <span translate="menuItem.label">{{menuItem.title}}</span>
+  <md-icon>keyboard_arrow_down</md-icon>
+</button>
