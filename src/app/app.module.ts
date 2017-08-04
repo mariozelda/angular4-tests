@@ -5,6 +5,9 @@ import { HttpModule } from '@angular/http';
 import { MaterialModule } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {TranslateModule} from 'ng2-translate';
+
+let language = navigator.language || navigator['userLanguage'];
 
 
 //Routes
@@ -43,11 +46,13 @@ import { FooterComponent } from './components/common/footer/footer.component';
     MaterialModule,
     FlexLayoutModule,
     BrowserAnimationsModule,
-    APP_ROUTING
+    APP_ROUTING,
+    TranslateModule.forRoot()
   ],
   providers: [
     NavbarService,
-    MenuService
+    MenuService,
+    { provide: "Browser_Language", useValue: language }
   ],
   bootstrap: [AppComponent],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]

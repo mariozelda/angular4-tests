@@ -40,7 +40,7 @@
 </md-menu>
 
 <md-menu class="custom-menu" #languagesMenu="mdMenu" [overlapTrigger]="false"  (close)="closeMenu()" xPosition="after">
-  <button md-menu-item *ngFor="let item of languages" (click)="select(item.text)" [disabled]="item.disabled">
+  <button md-menu-item *ngFor="let item of languages" (click)="onChange(item.value)" [disabled]="item.disabled">
     {{ item.text }}
   </button>
 </md-menu>

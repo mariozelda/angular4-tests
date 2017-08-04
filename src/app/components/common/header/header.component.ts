@@ -4,6 +4,8 @@ import { MdSidenavToggleResult } from '@angular/material';
 import { NavbarService } from '../navbar/navbar.service';
 import { ConnectedPositionStrategy, MdMenuTrigger } from '@angular/material';
 
+import {TranslateService} from 'ng2-translate';
+
 let originWithFallbackPosition = ConnectedPositionStrategy.prototype.withFallbackPosition;
 ConnectedPositionStrategy.prototype.withFallbackPosition = function (originPos, overlayPos) {
   overlayPos.overlayX = 'start';
@@ -46,9 +48,9 @@ export class HeaderComponent implements OnInit {
   ];
 
   languages = [
-    { text:'DE' },
-    { text:'EN' },
-    { text:'FR' }
+    { text:'DE', value:'de-DE' },
+    { text:'EN', value:'en-US' },
+    { text:'FR', value:'fr-FR' }
   ];
 
   defaultLanguage = this.languages[0];
@@ -57,7 +59,8 @@ export class HeaderComponent implements OnInit {
   public isSidenavOpened: boolean = true;
 
   constructor( private router:Router,
-    public navbarService: NavbarService) {
+    public navbarService: NavbarService,
+    private _translateService: TranslateService) {
   }
 
   ngOnInit() { }
@@ -93,6 +96,11 @@ export class HeaderComponent implements OnInit {
   changeLanguage() {
       // console.log("Change language!");
       this.triggers.forEach(x => x.closeMenu());
+  }
+
+  onChange(localeId: string): void {
+    debugger;
+    this._translateService.use(localeId);
   }
 
 }

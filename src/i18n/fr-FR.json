@@ -1,0 +1,53 @@
+{
+  "menu":{
+    "customers": "Les clients"
+  },
+  "customerList": {
+    "header": "Customer List",
+    "tableHeaders": {
+      "name": "Prénom",
+      "city": "Ville",
+      "country": "Pays",
+      "customerSince": "Client depuis",
+      "satisfaction": "la satisfaction"
+    }
+  },
+  "languages": {
+    "de-DE": "German",
+    "en-US": "English",
+    "fr-FR": "Français"
+  },
+  "customerDetails": {
+    "headers": {
+      "new": "Nouveau client",
+      "update": "Détails pour {{name}}"
+    },
+    "fields": {
+      "name": {
+        "caption": "Prénom",
+        "placeholder": "John Smith"
+      },
+      "country": {
+        "caption": "Pays",
+        "placeholder": "Les États-Unis d'Amérique"
+      },
+      "countryCode": {
+        "caption": "Code postal",
+        "placeholder": "US"
+      },
+      "city": {
+        "caption": "Ville",
+        "placeholder": "New York"
+      },
+      "phone": {
+        "caption": "Téléphone",
+        "placeholder": "+1 (555) 123 456"
+      }
+    }
+  },
+  "buttons": {
+    "save": "enregistrer",
+    "cancel": "annuler",
+    "delete": "effacer"
+  }
+}

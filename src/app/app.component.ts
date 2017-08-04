@@ -1,6 +1,10 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, Inject } from '@angular/core';
+
+import {BrowserModule} from '@angular/platform-browser'
 
 import { MdSidenav } from '@angular/material';
+
+import {TranslateService} from 'ng2-translate';
 
 import { NavbarService } from './components/common/navbar/navbar.service';
 
@@ -31,6 +35,8 @@ export class AppComponent implements OnInit {
   horizontalNav: boolean = true;
 
   constructor(private meterReadingService: FFDAOMeterReadingService,
+    private _translateService: TranslateService,
+    @Inject("Browser_Language") private _browserLocale: string,
     private navbarService: NavbarService,
     private menuService: MenuService
   ){
@@ -43,7 +49,10 @@ export class AppComponent implements OnInit {
   }
 
   public ngOnInit(): void {
-    // Store sidenav to service
+    this._translateService.addLangs(['en-US', 'de-DE', 'fr-FR']);
+    this._translateService.setDefaultLang('en-US');
+    // this._translateService.use(this._browserLocale);
+    this._translateService.use("de-DE");
   }
 
   private loadMenu(){
